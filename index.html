@@ -4,6 +4,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Simple DOM example</title>
+
+	<style>
+		.highlight {
+			color: white;
+			background-color: black;
+			padding: 10px;
+			width: 250px;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 	<section>
@@ -17,13 +27,18 @@
 		const text = document.createTextNode(
 			" — the premier source for web development knowledge.",
 		);
+		const linkPara = document.querySelector("p");
 
 		link.textContent = "Mozilla Developer Network";
 		link.href = "https://developer.mozilla.org";
 
 		para.textContent = "We hope you enjoyed the ride.";
 		sect.appendChild(para);
+		
+		sect.appendChild(linkPara);
+		linkPara.appendChild(text);
 
+		para.setAttribute("class", "highlight");
 	</script>
 </body>
 </html>
